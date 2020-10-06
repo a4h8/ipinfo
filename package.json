@@ -1,0 +1,42 @@
+{
+  "name": "ipinfo",
+  "version": "1.0.2",
+  "description": "What's My IP Address, WhoIs Lookup and more.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-watch main.js",
+    "dev": "babel-watch main.js",
+    "prelint:js": "npm run format:all",
+    "lint:js": "eslint ./*.js",
+    "format:all": "prettier --write *.js"
+  },
+  "keywords": [
+    "ifconfig",
+    "ipinfo",
+    "whois",
+    "express"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a4h8/ipinfo.git"
+  },
+  "author": "Anis Mula",
+  "license": "MIT",
+  "dependencies": {
+    "regenerator-runtime": "^0.13.7",
+    "express": "^4.16.4",
+    "cors": "^2.8.5",
+    "ipware": "^2.0.0",
+    "whois": "^2.13.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.10.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^2.0.8",
+    "eslint-config-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.15.3"
+  }
+}
