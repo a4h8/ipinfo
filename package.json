@@ -4,11 +4,12 @@
   "description": "What's My IP Address, WhoIs Lookup and more.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint && cross-env BABEL_ENV=dist npm run build",
     "start": "babel-watch main.js",
     "dev": "babel-watch main.js",
     "prelint:js": "npm run format:all",
-    "lint:js": "eslint ./*.js",
+    "lint": "eslint ./*.js",
+    "build": "babel ./ --out-dir dist/ --copy-files",
     "format:all": "prettier --write *.js"
   },
   "keywords": [
@@ -33,10 +34,17 @@
   "devDependencies": {
     "@babel/plugin-transform-async-to-generator": "^7.10.4",
     "babel-cli": "^6.26.0",
+    "@babel/core": "^7.2.0",
     "babel-preset-env": "^1.7.0",
     "babel-watch": "^2.0.8",
-    "eslint-config-prettier": "^3.4.0",
-    "eslint-plugin-prettier": "^3.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-istanbul": "^5.1.0",
+    "babel-plugin-react-intl": "^4.1.19",
+    "eslint": "^6.5.1",
+    "eslint-config-babel": "^9.0.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "prettier": "^1.15.3"
   }
 }
