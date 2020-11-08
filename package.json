@@ -4,12 +4,12 @@
   "description": "What's My IP Address, WhoIs Lookup and more.",
   "main": "main.js",
   "scripts": {
-    "test": "npm run lint && cross-env BABEL_ENV=dist npm run build",
+    "test": "npm run lint && cross-env BABEL_ENV=test npm run build",
     "start": "babel-watch main.js",
     "dev": "babel-watch main.js",
     "prelint:js": "npm run format:all",
     "lint": "eslint ./*.js",
-    "build": "babel ./ --out-dir dist/ --copy-files",
+    "build": "babel main.js --out-file main_compiled.js --source-maps inline",
     "format:all": "prettier --write *.js"
   },
   "keywords": [
