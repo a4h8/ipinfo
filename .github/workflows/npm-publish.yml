@@ -13,12 +13,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      run: |
-        npm install
-        npm run dev --if-present
+    - run: npm install
+    - run: npm run dev --if-present
+    - run: npm start
     - name: publish
       env:
-        super_secret: ${{ secrets.TEST_KEY }}
+        CI: true
+        super_secret: ${{ secrets.TEST_KEY }} 
       run: |
         echo 'printing secret key'
         echo $TEST_KEY
